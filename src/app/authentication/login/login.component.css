@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+section{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+section .imgBox{
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+section .imgBox:before{
+  content: '';
+  psition: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(225deg,#e91e63,#03a9f4);
+  z-index: 1;
+  mix-blend-mode: screen;
+}
+section .imgBox img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+section .contentBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+section .contentBox .formBox{
+  width: 50%;
+}
+section .contentBox .formBox h2{
+  color: #607d8b;
+  font-weight: 600;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-bottom: 4px solid #292627;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+section .contentBox .formBox .inputBox{
+  margin-bottom: 20px;
+}
+section .contentBox .formBox .inputBox span{
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: inline-block;
+  color: #607db8;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+section .contentBox .formBox .inputBox input{
+  width: 100%;
+  padding: 10px 20px;
+  outline: none;
+  font-weight: 400;
+  border: 1px solid #607d8b;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #607d8b;
+  background: transparent;
+  border-radius: 30px;
+}
+section .contentBox .formBox .inputBox input[type="submit"]{
+  background: #292627;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+section .contentBox .formBox .inputBox input[type="submit"]:hover{
+  background: #938e8e;
+}
+section .contentBox .formBox .remember{
+  margin-bottom: 10px;
+  color: #607d8b;
+  font-weight: 400;
+  font-size: 14px;
+}
+section .contentBox .formBox .inputBox p{
+  color: #607d8b;
+}
+section .contentBox .formBox .inputBox p a{
+  color: #292627;
+}
+section .contentBox .formBox h3{
+  color: #607d8b;
+  text-align: center;
+  margin: 80px 0 10px;
+  font-weight: 500;
+}
+section .contentBox .formBox .sci{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .contentBox .formBox .sci li{
+  list-style: none;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #607d8b;
+  border-radius: 50%;
+  margin: 0 7px;
+  cursor: pointer;
+}
+section .contentBox .formBox .sci li:hover{
+  background: #ff4584;
+}
+section .contentBox .formBox .sci li img{
+  transform: scale(1);
+  filter: invert(1);
+}
+
+@media(max-width:768px){
+  section .imgBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  section .contentBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  section .contentBox .formBox{
+    width: 100%;
+    padding: 40px;
+    background: rgb(255 255 255 / 0.9);
+    margin: 50px;
+  }
+  section .contentBox .formBox h3{
+    color: #607d8b;
+    text-align: center;
+    margin: 30px 0 10px;
+    font-weight: 500;
+  }
+}
+.text-danger{
+  color: rgb(203, 69, 51);
+}
+

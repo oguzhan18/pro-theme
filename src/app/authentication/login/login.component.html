@@ -1,0 +1,33 @@
+<section>
+  <div class="imgBox">
+    <img src="../../../assets/images/login-image/loginpage.jpg" width="500">
+  </div>
+  <div class="contentBox">
+    <div class="formBox">
+      <h2>PANEL GİRİŞ</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <div class="inputBox">
+          <span>Kullanıcı Adı / Email</span>
+          <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="email"
+            aria-describedby="emailHelp">
+        </div>
+        <div class="inputBox">
+          <span>Şifre</span>
+          <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1"
+            placeholder="email">
+        </div>
+        <div class="inputBox">
+          <input type="submit" value="Giriş" name="" (click)="submit()">
+        </div>
+        <div class="inputBox">
+          <p>Hesabınız yok mu?<a href="#">Kayıt Ol</a></p>
+        </div>
+      </form>
+      <div *ngIf="!success">
+        <h1 class="text-danger">
+          Giriş başarısız oldu.
+        </h1>
+      </div>
+    </div>
+  </div>
+</section>

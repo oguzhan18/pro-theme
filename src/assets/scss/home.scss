@@ -1,0 +1,1476 @@
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0
+}
+
+body {
+    font-size: 100%;
+    margin: 0 auto
+}
+
+header {
+    display: block;
+    position: relative;
+    z-index: 2;
+    height: 70px
+}
+
+div#connection {
+    display: none
+}
+
+div#connection>div {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 4px
+}
+
+#connection span {
+    display: none
+}
+
+a.logo {
+    display: inline-block;
+    height: 100%;
+    white-space: nowrap
+}
+
+a.logo>* {
+    display: inline-block
+}
+
+a.logo h1,
+a.logo h2 {
+    padding: 0;
+    margin: 0
+}
+
+a.logo>div {
+    margin-left: 12px;
+    margin-top: 6px
+}
+
+a.logo h1 {
+    font-size: 32px
+}
+
+a.logo h2 {
+    font-size: 24px;
+    margin-top: -8px
+}
+
+a.logo>img {
+    width: 64px;
+    height: 64px;
+    margin-top: 3px;
+}
+
+div.tt {
+    display: inline-block;
+    font-size: 140%;
+    height: 100%;
+    margin-left: 40px
+}
+
+a.toplink,
+a.toplink:visited {
+    font-size: 110%;
+    margin-top: 16px;
+    margin-right: 20px
+}
+
+div#hw {
+    white-space: nowrap;
+    height: 100%;
+    padding: 0 24px
+}
+
+.ld_ad {
+    display: block;
+    height: 150px;
+    width: 249px;
+    padding: 0;
+    margin: 0;
+    position: relative
+}
+
+#tac {
+    float: right;
+    margin-top: 12px;
+    white-space: nowrap
+}
+
+#tac>* {
+    display: inline-block
+}
+
+#tac>div {
+    margin-right: 12px;
+    margin-top: 4px
+}
+
+span#clock {
+    float: right;
+    font-size: 120%;
+    padding: 4px 8px
+}
+
+#topmenu {
+    display: inline-block;
+    margin-top: 4px;
+    float: right;
+    margin-right: 40px
+}
+
+#topmenu>* {
+    display: inline-block;
+    height: 100%
+}
+
+#topmenu i {
+    font-size: 120%
+}
+
+#menubar {
+    font-size: initial;
+    white-space: nowrap;
+    padding-left: 70px;
+    padding-top: 8px;
+    position: absolute !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 106%;
+    height: 32px
+}
+
+div#topslider {
+    padding: 12px 0;
+    white-space: nowrap
+}
+
+div.content {
+    padding: 0 12px
+}
+
+div.ib {
+    display: inline-block
+}
+
+div.o {
+    max-width: 1900px;
+    margin: 0 auto
+}
+
+div.o.big {
+    max-width: 2540px
+}
+
+div#content {
+    position: relative
+}
+
+#top {
+    position: relative;
+    padding-top: 12px;
+    padding-bottom: 40px
+}
+
+#top.iletisim {
+    height: 160px
+}
+
+.top10 {
+    display: block;
+    white-space: nowrap;
+    max-width: 663px;
+    position: relative;
+    min-width: 660px;
+    min-height: 70px
+}
+
+.top10::-webkit-scrollbar {
+    display: none
+}
+
+.top10>* {
+    display: inline-block
+}
+
+div.ctedesc {
+    max-width: 236px;
+    padding-left: 12px;
+    white-space: initial
+}
+
+div#menubar div>div {
+    display: inline-block;
+    padding: 0 20px
+}
+
+div#popupgraph,
+div#pwrap {
+    display: none
+}
+
+.dc>img {
+    display: none
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 140px;
+    padding: 40px 0 120px 0;
+    height: unset;
+    padding: 8px 0
+}
+
+table.market td {
+    padding-top: .8em;
+    padding-bottom: .8em
+}
+
+table.market th,
+table.market td {
+    padding-left: 2em;
+    padding-right: 2em
+}
+
+table.market>tbody>tr td:nth-child(2) {
+    padding-left: 1em;
+    padding-right: 1em
+}
+
+div.options {
+    padding: 12px;
+    white-space: nowrap
+}
+
+div.options>* {
+    display: inline-block
+}
+
+#converter {
+    margin-left: 40px;
+    padding: 12px 8px 12px 40px;
+    padding: 12px 40px 40px 40px;
+    margin-top: 30px
+}
+
+#aamount,
+#damount {
+    width: 120px
+}
+
+#converter select {
+    padding: 4px 8px;
+    max-width: 150px;
+    font-size: 94%
+}
+
+#converter input,
+#converter select,
+#converter option {
+    padding: 0;
+    margin: 0
+}
+
+#converter input {
+    font-size: 120%
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px
+}
+
+body::-webkit-scrollbar {
+    width: 12px
+}
+
+.tt a,
+.tt a:visited {
+    display: table-cell;
+    height: 70px;
+    padding: 0 40px
+}
+
+div#connection {
+    position: fixed;
+    left: 0;
+    z-index: 99999;
+    bottom: 0
+}
+
+div#connection:hover {
+    display: block
+}
+
+div#connection:hover>div {
+    padding: 20px
+}
+
+div#connection:hover span {
+    display: inline
+}
+
+i {
+    margin-right: 8px
+}
+
+input,
+textarea,
+option,
+optgroup,
+select {
+    font-size: 100%
+}
+
+table {
+    margin: 0 auto;
+    padding: .5em
+}
+
+table.market {
+    padding: 1em
+}
+
+table.market th {
+    padding: .8em 0;
+    font-size: 70%
+}
+
+table.market.double {
+    margin-left: 0;
+    margin-right: 0
+}
+
+table.market>tbody>tr>td:first-child {
+    padding: 0
+}
+
+table.market>tbody>tr td:nth-child(3) {
+    padding-left: 0;
+    padding-right: 0
+}
+
+table.market>thead>tr>th:first-child {
+    padding-left: 0;
+    padding-right: 0
+}
+
+.options>input[type=text] {
+    width: 124px;
+    padding-left: 8px
+}
+
+img.option {
+    width: 30px;
+    height: 30px
+}
+
+.t1 {
+    padding-top: 40px
+}
+
+.t2 {
+    padding-top: 30px
+}
+
+.t3 {
+    padding-top: 20px
+}
+
+.t4 {
+    padding-top: 10px
+}
+
+.p1 {
+    padding-left: 40px;
+    padding-right: 40px
+}
+
+.p2 {
+    padding-left: 30px;
+    padding-right: 30px
+}
+
+.p3 {
+    padding-left: 20px;
+    padding-right: 20px
+}
+
+.p4 {
+    padding-left: 10px;
+    padding-right: 10px
+}
+
+div.o.k::after {
+    position: absolute;
+    content: var(--img-chess);
+    top: 20px;
+    right: 0
+}
+
+div.o.k::before {
+    position: absolute;
+    content: url(http://static.hakanaltin.com/images/cakmakci-grup.png);
+    top: 20px;
+    left: 30px
+}
+
+.ktitle {
+    display: inline-block;
+    max-width: calc(100% - 420px);
+    padding-top: 20px;
+    font-size: 120%;
+    padding-left: 60px;
+    max-height: 140px;
+    margin-left: 240px
+}
+
+div.bw>* {
+    display: inline-block
+}
+
+form {
+    padding: 0;
+    margin: 0
+}
+
+h1 {
+    margin: 0;
+    padding: .5em;
+    padding: 0
+}
+
+a.ld_ad::after {
+    content: "Gerçek zamanlı canlı veri takip ekranı";
+    position: absolute;
+    left: 21%;
+    width: 59%;
+    bottom: 25px;
+    font-size: 90%;
+    white-space: break-spaces
+}
+
+.ld_ad>img {
+    position: absolute;
+    left: 26px;
+    top: 10px
+}
+
+body.sp #menubar {
+    margin-top: 0
+}
+
+#menubar>div>div {
+    display: inline-block;
+    height: 24px;
+    margin-right: 60px;
+    padding-bottom: 6px
+}
+
+#menubar>div>div:hover {
+    height: 23px
+}
+
+div#themepicker {
+    float: right;
+    width: 34px;
+    height: 15px;
+    margin: 6px 10px 0 0;
+    padding: 4px;
+    position: relative
+}
+
+div#themepicker>div {
+    width: 15px;
+    height: 15px
+}
+
+div#themepicker>div::after {
+    content: "▼";
+    font-size: 70%;
+    margin-left: 20px
+}
+
+div#themepicker>span.selector {
+    display: none;
+    position: absolute;
+    width: 50px;
+    left: 0;
+    top: 98%;
+    padding: .4em
+}
+
+span.selector>span {
+    display: inline-block;
+    width: 20px;
+    height: 20px
+}
+
+div#themepicker:hover>span.selector {
+    display: block
+}
+
+.fmenu>div {
+    display: inline-block;
+    white-space: nowrap
+}
+
+img.logo {
+    padding: 2px 0
+}
+
+div.altin {
+    margin: 60px 0;
+    padding: 40px 20px;
+    font-size: 110%
+}
+
+body.sp #top {
+    padding: 0
+}
+
+#top>div {
+    position: relative;
+    z-index: 4
+}
+
+.dcbox {
+    position: absolute;
+    top: 0;
+    font-size: 78%;
+    margin: 4px;
+    padding: 4px 8px;
+    width: 75px
+}
+
+#topslider div.top10:first-child::before {
+    position: absolute;
+    content: "Günün yükselenleri";
+    display: inline-block;
+    width: 80px;
+    font-size: 84%;
+    padding-top: 22px;
+    padding-right: 12px;
+    white-space: break-spaces
+}
+
+#topslider div.top10:first-child::after {
+    position: absolute;
+    left: 94px;
+    top: 12px;
+    content: url(https://static.hakanaltin.com/images/up-big-2.png)
+}
+
+#topslider div.top10:last-child::before {
+    position: absolute;
+    content: "Günün düşenleri";
+    display: inline-block;
+    width: 80px;
+    font-size: 84%;
+    padding-top: 22px;
+    padding-right: 12px;
+    white-space: break-spaces
+}
+
+#topslider div.top10:last-child::after {
+    position: absolute;
+    left: 94px;
+    top: 12px;
+    content: url(http://static.hakanaltin.com/images/down-big-2.png)
+}
+
+div.top10>div.dcbox:nth-child(1) {
+    left: 150px
+}
+
+div.top10>div.dcbox:nth-child(2) {
+    left: 252px
+}
+
+div.top10>div.dcbox:nth-child(3) {
+    left: 354px
+}
+
+div.top10>div.dcbox:nth-child(4) {
+    left: 456px
+}
+
+div.top10>div.dcbox:nth-child(5) {
+    left: 558px
+}
+
+div.top10>div.dcbox:nth-child(6) {
+    left: 660px
+}
+
+div.top10>div.dcbox:nth-child(7) {
+    left: 762px
+}
+
+div.top10>div.dcbox:nth-child(8) {
+    left: 864px
+}
+
+div.top10>div.dcbox:nth-child(9) {
+    left: 966px
+}
+
+div.top10>div.dcbox:nth-child(10) {
+    left: 1068px
+}
+
+div.top10>div.dcbox:nth-child(n+11) {
+    display: none
+}
+
+.dcbox img {
+    display: none
+}
+
+.ind::before {
+    content: "%"
+}
+
+.up .ind::before {
+    content: "%+"
+}
+
+div.o>div.dcbox:first-child {
+    margin-left: 0
+}
+
+.price {
+    font-size: 130%
+}
+
+.dcdesc {
+    display: block;
+    font-size: 76%
+}
+
+#top .dcdesc {
+    font-size: 120%;
+    padding: 0;
+    margin: 8px 0 0 0
+}
+
+#popupdc .dcdesc {
+    padding: 8px 0;
+    font-size: 100%
+}
+
+#top h3 {
+    font-size: 100%
+}
+
+div.dc>span {
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+div.dc img {
+    width: 18px;
+    height: 18px
+}
+
+.r {
+    position: relative
+}
+
+div.pbar {
+    height: 36px;
+    white-space: nowrap
+}
+
+div.pbar>* {
+    display: inline-block
+}
+
+div.pbar>div:first-child {
+    padding-right: .4em
+}
+
+div.bar {
+    position: relative;
+    height: 100%;
+    width: 6px
+}
+
+div.bar>div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 80%
+}
+
+span.price {
+    font-size: 120%
+}
+
+div.pbar .ind {
+    padding: 0
+}
+
+.fark {
+    font-size: 80%;
+    padding-right: .15em
+}
+
+.up .fark::before {
+    content: "+"
+}
+
+.down .fark::before {
+    content: "-"
+}
+
+div.lp,
+div.rp {
+    margin: 5em 0
+}
+
+div.lp>*,
+div.rp>* {
+    display: inline-block
+}
+
+div.lp>div,
+div.rp>div {
+    width: 60%
+}
+
+div.lp>img,
+div.rp>img {
+    width: 38%
+}
+
+div.lp h1,
+div.rp h1 {
+    margin: 0 0 1em 0
+}
+
+.float {
+    font-size: 120%
+}
+
+.dcbox .float {
+    font-size: 120%
+}
+
+span.float>i {
+    font-size: 80%
+}
+
+span.float>i::before {
+    content: ",";
+    margin-left: 4px
+}
+
+.fxdouble.ib>div,
+.fxtable.ib>div {
+    position: relative;
+    margin-top: 30px
+}
+
+div.common+div.ib,
+div.common+div.ib+div.ib {
+    margin-top: 0
+}
+
+div.cells {
+    position: absolute
+}
+
+div.cells>div {
+    position: relative;
+    display: inline-block;
+    margin: 1%;
+    width: 30%;
+    height: 30%;
+    max-height: 140px
+}
+
+.cells .ind {
+    font-size: 110%;
+    margin-top: 2px
+}
+
+div.prices {
+    font-size: 120%;
+    padding-top: 6px
+}
+
+.fc {
+    display: flex;
+    width: 100%;
+    height: 100%
+}
+
+div.cells>[data-dc]::after {
+    content: attr(data-value);
+    display: block;
+    bottom: 8px;
+    height: 6px;
+    margin-top: -6px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto
+}
+
+div.cells>div:hover::after {
+    width: 100%
+}
+
+.ibgraph {
+    padding-top: 30px;
+    min-width: 660px;
+    min-height: 400px;
+    padding-left: 40px;
+    padding-right: 40px
+}
+
+.fxtable.ib {
+    margin-right: 30px
+}
+
+.button {
+    padding: 8px 16px
+}
+
+.button>span {
+    padding-left: 24px
+}
+
+div.titlebar {
+    padding-left: 12px
+}
+
+#converter input[type="button"] {
+    padding: 5px 8px;
+    height: unset;
+    font-size: 94%
+}
+
+#calcresultAB::before,
+#calcresultDB::before {
+    display: block;
+    content: "Alış";
+    padding-bottom: 8px;
+    font-size: 120%
+}
+
+#calcresultAS::before,
+#calcresultDS::before {
+    display: block;
+    content: "Satış";
+    padding-bottom: 8px;
+    font-size: 120%
+}
+
+.calcresult {
+    margin: 8px 0;
+    padding: 8px
+}
+
+.calcresult::after {
+    content: attr(data-birim);
+    padding-left: 6px
+}
+
+.calcresult.doviz::after {
+    content: attr(data-dc1);
+    font-size: smaller
+}
+
+.options input {
+    font-size: 80%
+}
+
+.options>span {
+    float: left;
+    margin-left: 12px;
+    font-size: 160%;
+    margin-top: 4px
+}
+
+.common>span {
+    font-size: 160%
+}
+
+.common:after {
+    content: "";
+    display: block
+}
+
+.converter tbody select {
+    width: 100%
+}
+
+.title>* {
+    padding: 12px 0 8px 0
+}
+
+tr.title+tr>* {
+    padding-top: 20px
+}
+
+div.footerWrapper {
+    padding: 12px
+}
+
+h4 {
+    padding: 0;
+    margin: 0;
+    padding: 12px 0;
+    font-size: 110%
+}
+
+.big-arr {
+    padding-top: 6px;
+    padding-right: 6px;
+    display: inline-block;
+    height: 58px;
+    width: 42px
+}
+
+div.doublechart {
+    margin-top: 60px
+}
+
+div.doublechart>div {
+    width: 39%
+}
+
+div.doublechart>div:first-child {
+    margin-right: 1%
+}
+
+div.cte {
+    padding-left: 18px;
+    margin-left: 18px
+}
+
+div.toptitle {
+    margin-bottom: 25px
+}
+
+div.mobilapp {
+    padding-right: 200px;
+    padding-left: 12px
+}
+
+.mobilapp>a {
+    display: block
+}
+
+.tview {
+    margin-top: 40px
+}
+
+.float>span {
+    display: block
+}
+
+td.float>span {
+    padding: 4px 8px !important
+}
+
+table.nd tr:first-child>td>span {
+    margin-bottom: 2px
+}
+
+.valign {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+.subpagewrapper {
+    float: left;
+    position: relative
+}
+
+div.footer>div {
+    display: inline-block
+}
+
+footer ul {
+    margin: 10px 0 0 80px;
+    padding-left: 30px
+}
+
+footer ul a,
+footer ul a:visited {
+    font-size: 90%
+}
+
+footer li>i {
+    width: 22px;
+    padding-right: 4px
+}
+
+table.form {
+    margin: 20px auto;
+    padding: 40px
+}
+
+table.form thead th {
+    font-size: 140%;
+    padding-bottom: 30px
+}
+
+table.form tbody td {
+    padding: 8px 20px
+}
+
+table.form input[type="text"] {
+    padding: 4px 12px
+}
+
+button {
+    font-size: 110%;
+    padding: 8px 12px
+}
+
+button>i {
+    margin-right: 8px
+}
+
+select {
+    padding: 2px 12px
+}
+
+textarea {
+    padding: 8px 16px;
+    height: 80px
+}
+
+table.form.big {
+    min-width: 600px
+}
+
+#fapps {
+    position: absolute;
+    right: 20px;
+    top: 20px
+}
+
+#fapps>a {
+    display: block
+}
+
+.flexback {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1
+}
+
+.panaroma {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1
+}
+
+.panaroma img {
+    z-index: 3;
+    margin: -30px auto 0 auto;
+    position: relative
+}
+
+.panaroma>div {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    height: 100%
+}
+
+.panaroma>div:first-child {
+    width: 50%;
+    left: 0
+}
+
+.panaroma>div:last-child {
+    width: 50%;
+    right: 0
+}
+
+.panaroma>div:nth-child(2) {
+    position: absolute;
+    margin: 0 auto;
+    z-index: 8;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%
+}
+
+.dmswitch {
+    display: none
+}
+
+.dmswitch+label {
+    display: inline-block;
+    padding: 2px;
+    height: 28px
+}
+
+.dmswitch:checked+label::after {
+    display: inline-block;
+    padding: 6px 8px 0;
+    float: right;
+    height: 32px;
+    content: "\f186"
+}
+
+.dmswitch:checked+label::before {
+    display: inline-block;
+    content: "";
+    width: 20px;
+    height: 28px
+}
+
+.dmswitch:not(:checked)+label::after {
+    display: inline-block;
+    content: "";
+    width: 20px;
+    height: 28px
+}
+
+.dmswitch:not(:checked)+label::before {
+    display: inline-block;
+    padding: 6px 8px 0;
+    float: left;
+    height: 32px;
+    content: "\f185"
+}
+
+div#popupgraph {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0;
+    min-width: 320px;
+    z-index: 9
+}
+
+div#popupgraph>div:first-child {
+    display: inline-block;
+    min-width: 320px;
+    min-height: 450px;
+    width: 80%;
+    margin: auto
+}
+
+div#popupgraph>span {
+    display: block;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    padding: 8px 12px;
+    z-index: 9
+}
+
+div#popupgraph>div>* {
+    display: inline-block
+}
+
+#popuptw>iframe {
+    padding: 0;
+    margin: 0;
+    width: 425px;
+    height: 450px;
+    max-width: 100%
+}
+
+div#popupdc {
+    display: block;
+    padding-bottom: 12px;
+    font-size: 140%
+}
+
+div#popupdc h1 {
+    font-size: 140%;
+    padding: 8px 0
+}
+
+div#popupdc>a {
+    font-size: 70%;
+    margin-top: 8px;
+    display: inline-block
+}
+
+div#loading .ctn-preloader .animation-preloader {
+    margin-left: 425px
+}
+
+div#tradingview_popup {
+    width: calc(100% - 430px)
+}
+
+#loading {
+    display: none
+}
+
+input.viewmode {
+    display: none
+}
+
+input.viewmode+label {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px
+}
+
+input.viewmode+label::after {
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+input.viewmode[value='cell']+label::after {
+    content: url(http://static.hakanaltin.com/images/cellview.png)
+}
+
+input.viewmode[value='list']+label::after {
+    content: url(http://static.hakanaltin.com/images/listview.png)
+}
+
+span.close::after {
+    content: "Kapat"
+}
+
+div#kurumsal {
+    position: relative;
+    width: 96%;
+    margin: 40px auto;
+    margin-bottom: 20px
+}
+
+div#kurumsal>div {
+    position: relative;
+    display: inline-block;
+    padding: 0 8px;
+    width: 110px;
+    margin: 60px 2px 0 2px;
+    height: 154px;
+    min-width: 126px
+}
+
+div#kurumsal>div>img {
+    position: absolute;
+    left: 24px;
+    bottom: 14px;
+    width: calc(100% - 36px);
+    height: auto
+}
+
+div#kurumsal>div::before {
+    content: " ";
+    position: absolute;
+    display: block;
+    left: -1px;
+    top: -32px;
+    width: 150px;
+    height: 32px;
+    z-index: 1
+}
+
+div[data-foundation]::after {
+    content: attr(data-foundation);
+    position: absolute;
+    left: -4px;
+    top: -44px;
+    font-size: 160%;
+    z-index: 2
+}
+
+div#kurumsal img.fix {
+    height: 26px
+}
+
+div#kurumsal div.title {
+    padding-bottom: 18px;
+    padding-top: 12px;
+    font-size: 140%
+}
+
+div#kurumsal div.foundation {
+    font-size: 140%;
+    padding-bottom: 4px
+}
+
+.foundation::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    display: block;
+    width: 10px;
+    height: 10px
+}
+
+.exclam {
+    margin: 20px;
+    padding: 24px
+}
+
+.exclam::before {
+    content: "\f071";
+    font-size: 160%;
+    display: inline-block;
+    padding-right: 12px
+}
+
+.fav::after {
+    padding-left: 6px;
+    content: "\f02e"
+}
+
+.unfav::after {
+    padding-left: 6px;
+    content: "\f02e"
+}
+
+#menubar>div>div[data-total]::after {
+    content: attr(data-total);
+    margin-left: 12px;
+    padding: 2px 6px
+}
+
+div#portfoiler {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    top: 294px;
+    padding: 20px;
+    left: 0;
+    height: calc(100% - 294px);
+    width: 100%
+}
+
+div#portfoiler>div {
+    position: absolute
+}
+
+.altin>p {
+    margin: 8px 0 0 0
+}
+
+#pwrap {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999
+}
+
+#pwrap>div {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    bottom: 5%;
+    height: 90%;
+    padding: 0;
+    margin: 0;
+    z-index: 1
+}
+
+#tcmb_frame {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0
+}
+
+#pwrap .close {
+    position: absolute;
+    z-index: 2;
+    top: 1%;
+    right: 1%;
+    font-size: 140%;
+    padding: 4px 12px
+}
+
+.mh {
+    display: block
+}
+
+.iwwph {
+    position: relative
+}
+
+.iwwph>span {
+    position: absolute;
+    right: 18px;
+    top: 8px;
+    font-size: 80%;
+}
+
+div.graph {
+    position: relative;
+}
+
+div.graph::before {
+    content: attr(data-label);
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    right: 0;
+    display: block;
+    height: 24px;
+    background: var(--g-input-back);
+    padding-top: 4px;
+}
+
+div.graph>* {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+div.graph>iframe {
+    border: none;
+    z-index: 5;
+    top: 28px;
+    height: calc(100% - 28px);
+}
+
+div.graph>div {
+    background-color: var(--color-bg);
+    z-index: 6;
+}

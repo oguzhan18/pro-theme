@@ -1,0 +1,307 @@
+<div id="content" style="height: unset; padding-bottom: 303px;">
+  <div class="o">
+    <div class="content c">
+      <div class="fxdouble ib" id="fxdouble_main" property="mainEntity" typeof="ItemList">
+        <div class="ib">
+          <div class="options">
+            <span property="name">Serbest Piyasa Altın Fiyatları</span>
+            <div>
+              <input type="radio" value="cell" class="viewmode" id="rdcell_main_t1" name="viewmode_main_t1"
+                onchange="changeview(this);">
+              <label for="rdcell_main_t1"></label>
+              <input type="radio" value="list" class="viewmode" id="rdlist_main_t1" name="viewmode_main_t1"
+                onchange="changeview(this);" checked="checked">
+              <label for="rdlist_main_t1"></label>
+            </div>
+          </div>
+          <table class="market ib foldable" id="fxdouble_main_t1">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Değişim</th>
+                <th>Sembol</th>
+                <th>Alış</th>
+                <th>Satış</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="none" *ngFor="let data of parityList ; ">
+                <td data-act="fav" class="fav"></td>
+                <td>
+                  <div class="pbar" style="display: block;">
+                    <div>
+                      <div class="ind" data-f="C">{{data.askPercentChange}}</div>
+                      <div class="fark" data-f="D">7,8244</div>
+                    </div>
+                    <div class="bar">
+                      <div style="top: auto"> <span *ngIf="data.askPercentChange==0 || !data.askPercentChange"
+                          class="grid-all col-sm-3 col-md-3 col-lg-3" style="color: orange">
+                          %{{data.askPercentChange}}.00
+                        </span></div>
+                    </div>
+                  </div>
+                </td>
+                <td property="currency" content="GAUTRY">
+                  <div class="dc gold">
+                    <span class="gold"> {{data.Code}}</span>
+                    <div class="dcdesc">{{data.Code}}</div>
+                  </div>
+                </td>
+                <td class="float" property="currentExchangeRate" typeof="UnitPriceSpecification">
+                  <span class="" [ngClass]="{'up': data.askPercentChange >0,
+                    'down': data.askPercentChange <0}"> {{data.Ask}}</span>
+                </td>
+                <td class="float"><span class="" [ngClass]="{'up': data.askPercentChange >0,
+                  'down': data.askPercentChange <0}"> {{data.Bid}}</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ib">
+          <div class="options">
+            <span property="name">Serbest Piyasa Döviz Kurları</span>
+            <div>
+              <br><br>
+              <label for="rdlist_main_t2"></label>
+            </div>
+          </div>
+          <table class="market ib foldable" id="fxdouble_main_t1">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Değişim</th>
+                <th>Sembol</th>
+                <th>Alış</th>
+                <th>Satış</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="none" *ngFor="let data of currencyList ; ">
+                <td data-act="fav" class="fav"></td>
+                <td>
+                  <div class="pbar" style="display: block;">
+                    <div>
+                      <div class="ind" data-f="C">{{data.askPercentChange}}</div>
+                      <div class="fark" data-f="D">7,8244</div>
+                    </div>
+                    <div class="bar">
+                      <div style="top: auto"> <span *ngIf="data.askPercentChange==0 || !data.askPercentChange"
+                          class="grid-all col-sm-3 col-md-3 col-lg-3" style="color: orange">
+                          %{{data.askPercentChange}}.00
+                        </span></div>
+                    </div>
+                  </div>
+                </td>
+                <td property="currency" content="GAUTRY">
+                  <div class="dc gold">
+                    <span class="gold"> {{data.Code}}</span>
+                    <div class="dcdesc">{{data.Code}}</div>
+                  </div>
+                </td>
+                <td class="float" property="currentExchangeRate" typeof="UnitPriceSpecification">
+                  <span class="" [ngClass]="{'up': data.askPercentChange >0,
+                    'down': data.askPercentChange <0}"> {{data.Ask}}</span>
+                </td>
+                <td class="float"><span class="" [ngClass]="{'up': data.askPercentChange >0,
+                  'down': data.askPercentChange <0}"> {{data.Bid}}</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <div class="graph" id="tradingview_cea7f_1" data-twid="FOREXCOM:XAUUSD" style="width:99.6%;height:550px"
+          data-label="XAU/USD">
+          <iframe
+            src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_34628&symbol=XAUUSD&interval=1&symboledit=0&saveimage=0&toolbarbg=f1f3f6&studies=%5B%5D&theme=dark&style=2&timezone=Europe%2FIstanbul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=tr"
+            frameborder="0" style="width: 100%;height:30vw; "></iframe>
+        </div>
+      </div>
+
+
+      <div class="ib" id="converter">
+
+        <table class="converter">
+          <tbody>
+            <tr class="title">
+              <th colspan="2">Fiyat Çevirici</th>
+            </tr>
+            <tr>
+              <td>Miktar</td>
+              <td>Envanter</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="iwwph">
+                  <input type="text" value="1" id="aamount" onchange="calcA(this);" onkeyup="calcA(this);">
+                  <span id="birimA1">gr</span>
+                </div>
+
+              </td>
+              <td>
+                <select id="a1" onchange="calcA(this);">
+
+                  <option data-birim="gr" data-karsilik="₺" value="GAUTRY">Has altın / gram
+                  </option>
+                  <option data-birim="onz" data-karsilik="USD" value="XAUUSD">Has altın / onz
+                  </option>
+                  <option data-birim="gr" data-karsilik="USD" value="GAUUSD">USD/Kg</option>
+                  <option data-birim="gr" data-karsilik="EUR" value="GAUEUR">EUR/Kg</option>
+                  <option data-birim="onz" data-karsilik="USD" value="XAG/USD">Gümüş / onz
+                  </option>
+
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <div id="calcresultAB" class="calcresult" data-birim="₺">974,1</div>
+              </th>
+              <th>
+                <div id="calcresultAS" class="calcresult" data-birim="₺">983,04</div>
+              </th>
+            </tr>
+            <tr class="title">
+              <th colspan="2">Döviz Çevirici</th>
+            </tr>
+            <tr>
+              <td>Envanter</td>
+              <td>Karşılık</td>
+            </tr>
+            <tr>
+              <td>
+                <select id="dc1" onchange="refreshdc2(this);">
+
+                  <option value="EUR">Euro</option>
+                  <option value="USD">ABD Doları</option>
+                  <option value="GBP">İngiliz Sterlini</option>
+                </select>
+              </td>
+              <td>
+                <select id="dc2" onchange="calcD(this);">
+
+                  <option value="">Seçiniz</option>
+                  <option value="EURTRY">Türk lirası</option>
+                  <option value="EURUSD">ABD Doları</option>
+                  <option value="EURGBP">İngiliz Sterlini</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Miktar</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" value="1000" id="damount">
+              </td>
+              <td></td>
+            </tr>
+
+
+            <tr>
+              <th>
+                <div id="calcresultDB" class="calcresult doviz" data-dc1="EURUSD">1013.00</div>
+              </th>
+              <th>
+                <div id="calcresultDS" class="calcresult doviz" data-dc1="EURUSD">1014.20</div>
+              </th>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="title">
+              <th colspan="2">Kur Arşivi</th>
+            </tr>
+            <tr>
+              <td colspan="2">Tarih:</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+
+                <form id="tcmb_form" name="tcmb_form"
+                  action="https://www.tcmb.gov.tr/kurlar/201704/12042017.xml?_=1625141829858" method="get"
+                  target="tcmb_frame">
+
+                  <select id="archived">
+                    <option value="01">1</option>
+                    <option value="02" selected="">2</option>
+                    <option value="03">3</option>
+                    <option value="04">4</option>
+                    <option value="05">5</option>
+                    <option value="06">6</option>
+                    <option value="07">7</option>
+                  </select>
+
+                  <select id="archivem">
+                    <option value="01" selected="">Ocak</option>
+                    <option value="02">Şubat</option>
+                    <option value="03">Mart</option>
+                    <option value="04">Nisan</option>
+                  </select>
+
+                  <select id="archivey">
+                    <option value="2012" selected="">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                  </select>
+
+                </form>
+
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" style="padding: 8px 0;">
+                <span class="button" style="border: 1px black solid" onclick="showtcmb();">Göster</span>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="pwrap">
+    <span class="close"><i class="fas fa-window-close"></i></span>
+    <div>
+    </div>
+  </div>
+
+
+
+  <div id="popupgraph">
+    <div>
+
+      <div>
+
+        <div id="popupdc">
+          <h1>?</h1>
+          <div class="ind" data-f="C"></div>
+          <div class="dcdesc"></div>
+          <div data-f="B"></div>
+          <div data-f="S"></div>
+          <a class="button" href="https://hakanaltin.com/#"></a>
+        </div>
+        <div id="popuptw">
+        </div>
+      </div>
+
+      <div id="tradingview_popup">
+      </div>
+
+
+    </div>
+
+    <span class="close" onclick="closepg();">
+      <i class="fas fa-window-close"></i>
+    </span>
+
+
+  </div>
+
+  <div style="height: 40px; clear: both;">
+  </div>
+
+  <app-footer></app-footer>
+</div>
