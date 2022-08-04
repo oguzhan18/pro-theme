@@ -87,13 +87,13 @@ export class HomePriceComponent implements OnInit {
       this.ziynetList = [];
     }
     this.socketDataList.forEach((item, index) => {
-      if (item.Category === CATEGORYTYPE.DOVIZ) {
+      if (item.Category === CATEGORYTYPE.GRAM_ALTIN) {
         this.currencyList.push(item);
-      } else if (item.Category === CATEGORYTYPE.PARITE) {
+      } else if (item.Category === CATEGORYTYPE.KUYUMCU) {
         this.goldList.push(item);
       } else if (item.Category === CATEGORYTYPE.MADEN) {
         this.ziynetList.push(item);
-      } else if (item.Category === CATEGORYTYPE.ZIYNET) {
+      } else if (item.Category === CATEGORYTYPE.METAL) {
         this.parityList.push(item);
       }
     });
