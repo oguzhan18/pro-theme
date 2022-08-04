@@ -1,3 +1,3 @@
 export const servers = {
-  real: 'ws://89.19.27.83:26998'
+  real: 'wss://sslsocket.aifanet.com/89.19.27.85/14002'
 };
