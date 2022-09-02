@@ -10,6 +10,7 @@ import { AuthenticationService } from './authentication/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './_guards';
 import { NotPageComponent } from './not-page/not-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { NotPageComponent } from './not-page/not-page.component';
     ReactiveFormsModule,
     AppRoutingModule,
     CommonModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     HomeProvider,AuthenticationService,AuthGuard,

@@ -2,3 +2,6 @@
 @import url(./assets/scss/home.scss);
 @import url(./assets/scss/layout.scss);
 @import url(./assets/scss/nav_banner.scss);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

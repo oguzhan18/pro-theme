@@ -6,14 +6,7 @@
         <div class="ib">
           <div class="options">
             <span property="name">Serbest Piyasa Altın Fiyatları</span>
-            <div>
-              <input type="radio" value="cell" class="viewmode" id="rdcell_main_t1" name="viewmode_main_t1"
-                onchange="changeview(this);">
-              <label for="rdcell_main_t1"></label>
-              <input type="radio" value="list" class="viewmode" id="rdlist_main_t1" name="viewmode_main_t1"
-                onchange="changeview(this);" checked="checked">
-              <label for="rdlist_main_t1"></label>
-            </div>
+            <div> <br><br></div>
           </div>
           <table class="market ib foldable" id="fxdouble_main_t1">
             <thead>
@@ -69,7 +62,6 @@
           <table class="market ib foldable" id="fxdouble_main_t1">
             <thead>
               <tr>
-                <th></th>
                 <th>Değişim</th>
                 <th>Sembol</th>
                 <th>Alış</th>
@@ -82,8 +74,9 @@
                 <td>
                   <div class="pbar" style="display: block;">
                     <div>
-                      <div class="ind" data-f="C">{{data.askPercentChange}}</div>
-                      <div class="fark" data-f="D">7,8244</div>
+
+                      <span> %{{data.askPercentChange}}.00 </span>
+
                     </div>
                     <div class="bar">
                       <div style="top: auto"> <span *ngIf="data.askPercentChange==0 || !data.askPercentChange"
