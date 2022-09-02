@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { CATEGORYTYPE } from '../../_sharred/_models/categoryType';
 import { SocketData } from '../../_sharred/_models/socketData';
 import { HomeProvider } from '../../_sharred/_services/home.provider';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-home-price',
