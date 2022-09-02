@@ -8,13 +8,16 @@ import { HeaderComponent } from './utils/header/header.component';
 import { NavbarComponent } from './utils/navbar/navbar.component';
 import { FooterComponent } from './utils/footer/footer.component';
 import { HomePriceComponent } from './components/home-price/home-price.component';
-import { BestLowestComponent } from './components/best-lowest/best-lowest.component';
 import { BannerComponent } from './utils/banner/banner.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { AllFreeMarketComponent } from './components/All-Price-Tables/all-free-market/all-free-market.component';
+import { GoldsVarietiesComponent } from './components/All-Price-Tables/golds-varieties/golds-varieties.component';
+import { CurrencyComponent } from './components/All-Price-Tables/currency/currency.component';
+import { PariteComponent } from './components/All-Price-Tables/parite/parite.component';
 
 const routes: Routes = [
-  { path: '', component: FrontHomeComponent,
+  { path: '', component: HomePriceComponent,
   children: [
     { path: 'products', component: FrontHomeComponent },
     // { path: 'categories', component: FrontCategoriesComponent }
@@ -23,7 +26,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [FrontMainComponent, FrontHomeComponent, HeaderComponent, NavbarComponent, FooterComponent, HomePriceComponent, BestLowestComponent, BannerComponent, AboutComponent, ContactComponent],
+  declarations: [FrontMainComponent, FrontHomeComponent, HeaderComponent, NavbarComponent, FooterComponent, HomePriceComponent, BannerComponent, AboutComponent, ContactComponent, AllFreeMarketComponent, GoldsVarietiesComponent, CurrencyComponent, PariteComponent],
   imports: [
     CommonModule,
 
