@@ -8,8 +8,6 @@ import { HomeProvider } from './front/_sharred/_services/home.provider';
 import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AuthenticationService } from './authentication/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './authentication/login/login.component';
-import { RouterModule } from '@angular/router';
 import { AuthGuard } from './_guards';
 import { NotPageComponent } from './not-page/not-page.component';
 
