@@ -3,11 +3,9 @@ import { FrontHomeComponent } from './components/front-products/front-home.compo
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { HeaderComponent } from './utils/header/header.component';
 import { NavbarComponent } from './utils/navbar/navbar.component';
 import { FooterComponent } from './utils/footer/footer.component';
 import { HomePriceComponent } from './components/home-price/home-price.component';
-import { BannerComponent } from './utils/banner/banner.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { SafePipe } from './_sharred/_models/safe.pipe';
@@ -42,11 +40,9 @@ const routes: Routes = [
   declarations: [
     SafePipe,
     FrontHomeComponent,
-    HeaderComponent,
     NavbarComponent,
     FooterComponent,
     HomePriceComponent,
-    BannerComponent,
     AboutComponent,
     ContactComponent,
     // PariteComponent,

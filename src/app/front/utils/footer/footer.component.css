@@ -6,3 +6,9 @@
   position: relative;
   top: 0.2em;
 }
+.footer-logo{
+  position: relative;
+  bottom: 1.5em;
+  height: 100px;
+  width:  100px;
+}
