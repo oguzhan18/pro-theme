@@ -10,10 +10,6 @@ import { HomePriceComponent } from './components/home-price/home-price.component
 import { BannerComponent } from './utils/banner/banner.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { AllFreeMarketComponent } from './components/All-Price-Tables/all-free-market/all-free-market.component';
-import { GoldsVarietiesComponent } from './components/All-Price-Tables/golds-varieties/golds-varieties.component';
-import { CurrencyComponent } from './components/All-Price-Tables/currency/currency.component';
-import { PariteComponent } from './components/All-Price-Tables/parite/parite.component';
 import { SafePipe } from './_sharred/_models/safe.pipe';
 import { OurStoresComponent } from './pages/our-stores/our-stores.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -22,14 +18,22 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { GoldComponent } from './pages/all-price-pages/gold/gold.component';
+import { ParityComponent } from './pages/all-price-pages/parity/parity.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DovizComponent } from './pages/all-price-pages/doviz/doviz.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePriceComponent,
+    component: FrontHomeComponent,
     children: [
-      { path: 'products', component: FrontHomeComponent },
-      // { path: 'categories', component: FrontCategoriesComponent }
+      { path: '', component: HomePriceComponent },
+      { path: 'stores', component: OurStoresComponent },
+      { path: 'contact', component: ContactComponent },
+      { path: 'gold', component: GoldComponent },
+      { path: 'parity', component: ParityComponent },
+      { path: 'currency', component: DovizComponent },
     ],
   },
 ];
@@ -45,11 +49,11 @@ const routes: Routes = [
     BannerComponent,
     AboutComponent,
     ContactComponent,
-    AllFreeMarketComponent,
-    GoldsVarietiesComponent,
-    CurrencyComponent,
-    PariteComponent,
+    // PariteComponent,
     OurStoresComponent,
+    GoldComponent,
+    ParityComponent,
+    DovizComponent,
   ],
   imports: [CommonModule,
             RouterModule.forChild(routes),
@@ -58,6 +62,8 @@ const routes: Routes = [
             MatSlideToggleModule,
             MatSidenavModule,
             MatDialogModule,
-            MatButtonModule],
+            MatButtonModule,
+            ReactiveFormsModule,
+            FormsModule],
 })
 export class FrontModule {}

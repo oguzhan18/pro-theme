@@ -1,0 +1,54 @@
+.info {
+  background-color:rgba(255, 255, 255, 0.802);
+  height: 220px;
+  width: 296px;
+  border: 1px solid black;
+  position: absolute;
+  top: 15em;
+  left: 1em;
+}
+.info-pic{
+  margin-left: 0.5em;
+  width: 70px;
+  height: 70px;
+}
+.info-title{
+  font-weight: bolder;
+  font-size: 21px;
+  position: relative;
+  bottom:2em;
+  left: 0.5em;
+}
+.info-title-part{
+  font-weight: bolder;
+  position: relative;
+  left: 4em;
+}
+.info-context{
+  font-size: 16px;
+  width: 100%;
+  position: relative;
+  left: 4em;
+  bottom: 2em;
+}
+.info-phone-icons-box{
+position: relative;
+left: 5em;
+
+}
+.info-phone-icons-box img{
+  height: 22px;
+  width:  22px;
+}
+.info-phone-icons-box a{
+  position: relative;
+  left: 1em;
+  bottom:0.5em ;
+}
+.info-contact-title{
+  font-size: 17px;
+  font-weight: bolder;
+  position: relative;
+  left: 2em;
+  bottom: 1em;
+}

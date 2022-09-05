@@ -222,10 +222,7 @@ div#pwrap {
 }
 
 footer {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
+
     height: 140px;
     padding: 40px 0 120px 0;
     height: unset;
@@ -421,7 +418,6 @@ div.o.k::after {
 
 div.o.k::before {
     position: absolute;
-    content: url(http://static.hakanaltin.com/images/cakmakci-grup.png);
     top: 20px;
     left: 30px
 }

@@ -7,8 +7,8 @@
     <a href="#" class="logo" title="As Yıldız Döviz Anasayfa" property="url">
       <img src="../../assets/images/home-image/logo.svg" alt="As Yıldız Döviz" property="logo">
       <div>
-        <h1>MÜNÜR DOVİZ</h1>
-        <h2>Kıymetli Madenler</h2>
+        <h1>ASYILDIZ</h1>
+        <h2>YETKİLİ MÜESSESE A.Ş</h2>
       </div>
     </a>
     <div class="tt">
@@ -16,10 +16,11 @@
     </div>
 
     <div id="topmenu">
-      <a class="toplink" href="#kurumsal">
-        <img src="../../.././../assets/icon/black-tie.png" class="image-icons" alt="Kurumsal Icon"><span>Mağzalarımız</span>
+      <a class="toplink" routerLink="/stores">
+        <img src="../../.././../assets/icon/black-tie.png" class="image-icons"
+          alt="Kurumsal Icon"><span>Mağzalarımız</span>
       </a>
-      <a class="toplink" href="#iletisim">
+      <a class="toplink" routerLink="/contact">
         <img src="../../../../assets/icon/phone-icon.png" class="image-icons" alt="Iletisim Icon"><span>İletişim</span>
       </a>
       <div id="tac">
@@ -33,12 +34,11 @@
 <section id="top">
   <div id="menubar">
     <div class="o">
-      <div data-cu="/default.aspx" data-u="/" class="active"><span>Serbest Piyasalar</span></div>
-      <div><a>Altın &amp; Sarrafiye</a></div>
-      <div><a>Döviz</a></div>
-      <div><a>Parite</a></div>
-      <div><a>Kriptolar</a></div>
-      <div><a> Portföy</a></div>
+      <!-- <div class="active"><span>Serbest Piyasalar</span></div> -->
+      <div ><a routerLink="/">Serbest Piyasalar</a></div>
+      <div ><a routerLink="/gold">Altın &amp; Sarrafiye</a></div>
+      <div ><a routerLink="/currency">Döviz</a></div>
+      <div ><a routerLink="/parity">Parite</a></div>
     </div>
   </div>
 </section>
