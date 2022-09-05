@@ -1,7 +1,9 @@
 ﻿export enum CATEGORYTYPE {
-
+  DOVIZ = 'DOVIZ',
   MADEN = 'MADEN',
-  METAL = 'METAL',
-  GRAM_ALTIN = 'GRAM ALTIN',
-  KUYUMCU = 'KUYUMCU',
+  ZIYNET = 'ZIYNET',
+  PARITE = 'PARITE',
+  SARRAFIYE = 'SARRAFIYE',
+
+
 }

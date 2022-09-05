@@ -1,16 +1,19 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnDestroy, OnInit, Pipe, Renderer2,  } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { CATEGORYTYPE } from '../../_sharred/_models/categoryType';
 import { SocketData } from '../../_sharred/_models/socketData';
 import { HomeProvider } from '../../_sharred/_services/home.provider';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home-price',
   templateUrl: './home-price.component.html',
-  styleUrls: ['./home-price.component.css']
+  styleUrls: ['./home-price.component.css'],
 })
-export class HomePriceComponent implements OnInit {
+
+
+export class HomePriceComponent implements OnInit, OnDestroy {
   isClicked: boolean = false;
   currencyList: SocketData[] = [];
   goldList: SocketData[] = [];
@@ -32,11 +35,21 @@ export class HomePriceComponent implements OnInit {
   timer: any;
   interval: any;
 
-  constructor(private renderer: Renderer2,
-              private wsService: HomeProvider) {
-  }
+  XXX: string = 'USDTRY';
+  url: string = '';
+  urlx: string = '';
+  urlMap: SafeResourceUrl;
+
+  constructor(
+    private renderer: Renderer2,
+    public sanitizer: DomSanitizer,
+    private wsService: HomeProvider
+  ) {}
 
   ngOnInit() {
+
+    this.urlMap = this.sanitizer.bypassSecurityTrustResourceUrl(this.urlx);
+
     this.interval = setInterval(() => {
       if (this.pingStatus === false) {
         this.subscriptions.unsubscribe();
@@ -50,21 +63,25 @@ export class HomePriceComponent implements OnInit {
   getData() {
     this.wsService.initSocket();
 
-    this.subscriptions.add(this.wsService.connectWebSocket().subscribe((Sdata: SocketData[]) => {
-        clearTimeout(this.timer);
-        this.pingStatus = true;
-        this.socketDataList = Sdata;
-        this.filterData();
-        this.timer = setTimeout(() => {
+    this.subscriptions.add(
+      this.wsService.connectWebSocket().subscribe(
+        (Sdata: SocketData[]) => {
+          clearTimeout(this.timer);
+          this.pingStatus = true;
+          this.socketDataList = Sdata;
+          this.filterData();
+          this.timer = setTimeout(() => {
+            this.pingStatus = false;
+          }, 2000);
+        },
+        (err) => {
+          this.pingStatus = true;
+        },
+        () => {
           this.pingStatus = false;
-        }, 2000);
-      },
-      (err) => {
-        this.pingStatus = true;
-      },
-      () => {
-        this.pingStatus = false;
-      }));
+        }
+      )
+    );
   }
 
   trackByPrice(index: number, code) {
@@ -88,26 +105,31 @@ export class HomePriceComponent implements OnInit {
       this.ziynetList = [];
     }
     this.socketDataList.forEach((item, index) => {
-      if (item.Category === CATEGORYTYPE.GRAM_ALTIN) {
+      if (item.Category === CATEGORYTYPE['DOVIZ&PARITE']) {
         this.currencyList.push(item);
-      } else if (item.Category === CATEGORYTYPE.KUYUMCU) {
+      } else if (item.Category === CATEGORYTYPE.DOVIZ) {
         this.goldList.push(item);
       } else if (item.Category === CATEGORYTYPE.MADEN) {
         this.ziynetList.push(item);
-      } else if (item.Category === CATEGORYTYPE.METAL) {
+      } else if (item.Category === CATEGORYTYPE.ZIYNET) {
         this.parityList.push(item);
+      } else if (item.Category === CATEGORYTYPE.SARRAFIYE) {
+        this.kriptoList.push(item);
       }
     });
     if (this.dataListReplace1.length !== 0) {
-      if (JSON.stringify(this.dataListReplace1) === JSON.stringify(this.currencyList)) {
-
+      if (
+        JSON.stringify(this.dataListReplace1) ===
+        JSON.stringify(this.currencyList)
+      ) {
       } else {
         this.currencyList.forEach((data, index) => {
           if (data.Ask !== this.dataListReplace1[index].Ask) {
             this.percentChange(data, this.dataListReplace1[index], index);
           } else {
-            data.askPercentChange = 0.00;
-            this.dataListReplace1[index].askPercentChange = data.askPercentChange;
+            data.askPercentChange = 0.0;
+            this.dataListReplace1[index].askPercentChange =
+              data.askPercentChange;
           }
         });
       }
@@ -115,18 +137,21 @@ export class HomePriceComponent implements OnInit {
       this.dataListReplace1 = this.currencyList;
     }
     if (this.dataListReplace2.length !== 0) {
-      if (JSON.stringify(this.dataListReplace2) === JSON.stringify(this.goldList)) {
-
+      if (
+        JSON.stringify(this.dataListReplace2) === JSON.stringify(this.goldList)
+      ) {
       } else {
         this.goldList.forEach((data, index) => {
           if (data.Ask !== this.dataListReplace2[index].Ask) {
             this.percentChange(data, this.dataListReplace2[index], index);
           } else {
             if (data.askPercentChange) {
-              this.dataListReplace2[index].askPercentChange = data.askPercentChange;
+              this.dataListReplace2[index].askPercentChange =
+                data.askPercentChange;
             } else {
-              data.askPercentChange = 0.00;
-              this.dataListReplace2[index].askPercentChange = data.askPercentChange;
+              data.askPercentChange = 0.0;
+              this.dataListReplace2[index].askPercentChange =
+                data.askPercentChange;
             }
           }
         });
@@ -135,18 +160,22 @@ export class HomePriceComponent implements OnInit {
       this.dataListReplace2 = this.goldList;
     }
     if (this.dataListReplace3.length !== 0) {
-      if (JSON.stringify(this.dataListReplace3) === JSON.stringify(this.parityList)) {
-
+      if (
+        JSON.stringify(this.dataListReplace3) ===
+        JSON.stringify(this.parityList)
+      ) {
       } else {
         this.parityList.forEach((data, index) => {
           if (data.Ask !== this.dataListReplace3[index].Ask) {
             this.percentChange(data, this.dataListReplace3[index], index);
           } else {
             if (data.askPercentChange) {
-              this.dataListReplace3[index].askPercentChange = data.askPercentChange;
+              this.dataListReplace3[index].askPercentChange =
+                data.askPercentChange;
             } else {
-              data.askPercentChange = 0.00;
-              this.dataListReplace3[index].askPercentChange = data.askPercentChange;
+              data.askPercentChange = 0.0;
+              this.dataListReplace3[index].askPercentChange =
+                data.askPercentChange;
             }
           }
         });
@@ -155,18 +184,22 @@ export class HomePriceComponent implements OnInit {
       this.dataListReplace3 = this.parityList;
     }
     if (this.dataListReplace4.length !== 0) {
-      if (JSON.stringify(this.dataListReplace4) === JSON.stringify(this.kriptoList)) {
-
+      if (
+        JSON.stringify(this.dataListReplace4) ===
+        JSON.stringify(this.kriptoList)
+      ) {
       } else {
         this.kriptoList.forEach((data, index) => {
           if (data.Ask !== this.dataListReplace4[index].Ask) {
             this.percentChange(data, this.dataListReplace4[index], index);
           } else {
             if (data.askPercentChange) {
-              this.dataListReplace4[index].askPercentChange = data.askPercentChange;
+              this.dataListReplace4[index].askPercentChange =
+                data.askPercentChange;
             } else {
-              data.askPercentChange = 0.00;
-              this.dataListReplace4[index].askPercentChange = data.askPercentChange;
+              data.askPercentChange = 0.0;
+              this.dataListReplace4[index].askPercentChange =
+                data.askPercentChange;
             }
           }
         });
@@ -175,18 +208,22 @@ export class HomePriceComponent implements OnInit {
       this.dataListReplace4 = this.kriptoList;
     }
     if (this.dataListReplace5.length !== 0) {
-      if (JSON.stringify(this.dataListReplace5) === JSON.stringify(this.ziynetList)) {
-
+      if (
+        JSON.stringify(this.dataListReplace5) ===
+        JSON.stringify(this.ziynetList)
+      ) {
       } else {
         this.ziynetList.forEach((data, index) => {
           if (data.Ask !== this.dataListReplace5[index].Ask) {
             this.percentChange(data, this.dataListReplace5[index], index);
           } else {
             if (data.askPercentChange) {
-              this.dataListReplace5[index].askPercentChange = data.askPercentChange;
+              this.dataListReplace5[index].askPercentChange =
+                data.askPercentChange;
             } else {
-              data.askPercentChange = 0.00;
-              this.dataListReplace5[index].askPercentChange = data.askPercentChange;
+              data.askPercentChange = 0.0;
+              this.dataListReplace5[index].askPercentChange =
+                data.askPercentChange;
             }
           }
         });
@@ -195,7 +232,6 @@ export class HomePriceComponent implements OnInit {
       this.dataListReplace5 = this.ziynetList;
     }
   }
-
 
   /**
    * WS'den gelen fiyat farklılıklarını hesaplayan fonksiyon
@@ -207,7 +243,7 @@ export class HomePriceComponent implements OnInit {
     if (newData.Ask != oldData.Ask) {
       let oldAskPrice = +oldData.Ask;
       let newAskPrice = +newData.Ask;
-      let askPriceDifference = (1 - (oldAskPrice / newAskPrice)) * 100;
+      let askPriceDifference = (1 - oldAskPrice / newAskPrice) * 100;
       newData.askPercentChange = +askPriceDifference.toFixed(2);
       newData.Time = Date.now();
       if (askPriceDifference < 0) {
@@ -220,7 +256,6 @@ export class HomePriceComponent implements OnInit {
     }
   }
 
-
   resizeDiv(id) {
     this.isClicked = !this.isClicked;
 
@@ -229,18 +264,26 @@ export class HomePriceComponent implements OnInit {
     if (!this.isClicked) {
       // this.renderer.setStyle(element, 'max-height', '300px');
       element.style.height = '275px';
-
     } else {
       //this.renderer.setStyle(element, 'max-height', '550px');
       element.style.height = '550px';
     }
   }
 
+  ngOnDestroy(): void {
+    clearInterval(this.interval);
+  }
   toggle(socketData: SocketData) {
-    this.code = socketData.Code;
+    this.XXX = this.code = socketData.Code;
+    console.log(this.XXX);
+
+this.url = this.urlx = 'https://s.tradingview.com/widgetembed/?frameElementId=tradingview_34628&symbol='+this.XXX+'&interval=1&symboledit=0&saveimage=0&toolbarbg=f1f3f6&studies=%5B%5D&theme=dark&style=2&timezone=Europe%2FIstanbul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=tr'
+
+console.log(this.urlx);
   }
 
-  ngOnDestroy(): void {
-    // clearInterval(this.interval);
+  getSanitizedURL() {
+    return this.sanitizer.bypassSecurityTrustUrl(this.urlx);
   }
+
 }

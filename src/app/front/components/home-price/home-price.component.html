@@ -1,120 +1,123 @@
 <app-navbar></app-navbar>
-<div id="content" style="height: unset; padding-bottom: 303px;">
+
+
+<div id="content" style="height: unset; padding-bottom: 114px;">
   <div class="o">
     <div class="content c">
       <div class="fxdouble ib" id="fxdouble_main" property="mainEntity" typeof="ItemList">
         <div class="ib">
           <div class="options">
             <span property="name">Serbest Piyasa Altın Fiyatları</span>
-            <div> <br><br></div>
+            <br><br>
           </div>
-          <table class="market ib foldable" id="fxdouble_main_t1">
+
+
+
+
+          <table class="market ib foldable" id="fxdouble_main_t1" style="width: 40em;" >
             <thead>
               <tr>
-                <th></th>
-                <th>Değişim</th>
                 <th>Sembol</th>
                 <th>Alış</th>
                 <th>Satış</th>
               </tr>
             </thead>
+
             <tbody>
-              <tr class="none" *ngFor="let data of parityList ; ">
-                <td data-act="fav" class="fav"></td>
+              <tr *ngFor="let data of goldList;" (click)="toggle(data)" >
                 <td>
-                  <div class="pbar" style="display: block;">
-                    <div>
-                      <div class="ind" data-f="C">{{data.askPercentChange}}</div>
-                      <div class="fark" data-f="D">7,8244</div>
-                    </div>
-                    <div class="bar">
-                      <div style="top: auto"> <span *ngIf="data.askPercentChange==0 || !data.askPercentChange"
-                          class="grid-all col-sm-3 col-md-3 col-lg-3" style="color: orange">
-                          %{{data.askPercentChange}}.00
-                        </span></div>
-                    </div>
-                  </div>
-                </td>
-                <td property="currency" content="GAUTRY">
-                  <div class="dc gold">
-                    <span class="gold"> {{data.Code}}</span>
-                    <div class="dcdesc">{{data.Code}}</div>
-                  </div>
+                  <span class="doviz"> {{data.Code}} </span>
+                  <div class="dcdesc">{{data.Code}} </div>
                 </td>
                 <td class="float" property="currentExchangeRate" typeof="UnitPriceSpecification">
-                  <span class="" [ngClass]="{'up': data.askPercentChange >0,
-                    'down': data.askPercentChange <0}"> {{data.Ask}}</span>
+                  <span [ngClass]="{'up': data.askPercentChange >0,
+                    'down': data.askPercentChange <0}"> {{data.Ask | number: '1.'}} </span>
                 </td>
-                <td class="float"><span class="" [ngClass]="{'up': data.askPercentChange >0,
-                  'down': data.askPercentChange <0}"> {{data.Bid}}</span></td>
+                <td class="float">
+                  <span data-f="S"
+                    [ngClass]="{'up': data.askPercentChange >0,'down': data.askPercentChange <0}">{{data.Ask | number:
+                    '1.2-2'}} </span>
+                  <div style="position:absolute; right: 0em;">
+                    <span *ngIf="data.askPercentChange == 0 "><i class="material-icons"
+                        style="color:rgb(203, 156, 68)">remove</i></span>
+                    <span *ngIf="data.askPercentChange < 0"><i class="material-icons"
+                        style="color:rgb(210, 89, 89);">arrow_drop_down</i></span>
+                    <span *ngIf="data.askPercentChange > 0"><i class="material-icons"
+                        style="color:rgb(40, 165, 40)">arrow_drop_up</i></span>
+                  </div>
+                </td>
               </tr>
             </tbody>
+
           </table>
+
         </div>
         <div class="ib">
           <div class="options">
             <span property="name">Serbest Piyasa Döviz Kurları</span>
             <div>
               <br><br>
-              <label for="rdlist_main_t2"></label>
             </div>
           </div>
-          <table class="market ib foldable" id="fxdouble_main_t1">
+          <table class="market ib foldable" id="fxdouble_main_t2" style="width: 40em;">
             <thead>
               <tr>
-                <th>Değişim</th>
                 <th>Sembol</th>
                 <th>Alış</th>
                 <th>Satış</th>
               </tr>
             </thead>
+
             <tbody>
-              <tr class="none" *ngFor="let data of currencyList ; ">
-                <td data-act="fav" class="fav"></td>
+              <tr *ngFor="let data of kriptoList;">
                 <td>
-                  <div class="pbar" style="display: block;">
-                    <div>
-
-                      <span> %{{data.askPercentChange}}.00 </span>
-
-                    </div>
-                    <div class="bar">
-                      <div style="top: auto"> <span *ngIf="data.askPercentChange==0 || !data.askPercentChange"
-                          class="grid-all col-sm-3 col-md-3 col-lg-3" style="color: orange">
-                          %{{data.askPercentChange}}.00
-                        </span></div>
-                    </div>
-                  </div>
-                </td>
-                <td property="currency" content="GAUTRY">
-                  <div class="dc gold">
-                    <span class="gold"> {{data.Code}}</span>
-                    <div class="dcdesc">{{data.Code}}</div>
-                  </div>
+                  <span class="doviz" >   {{data.Code}} </span>
+                  <div class="dcdesc">{{data.Code}} </div>
                 </td>
                 <td class="float" property="currentExchangeRate" typeof="UnitPriceSpecification">
-                  <span class="" [ngClass]="{'up': data.askPercentChange >0,
-                    'down': data.askPercentChange <0}"> {{data.Ask}}</span>
+                  <span [ngClass]="{'up': data.askPercentChange >0,
+                    'down': data.askPercentChange <0}"> {{data.Ask | number: '1.'}} </span>
                 </td>
-                <td class="float"><span class="" [ngClass]="{'up': data.askPercentChange >0,
-                  'down': data.askPercentChange <0}"> {{data.Bid}}</span></td>
+                <td class="float">
+                  <span  [ngClass]="{'up': data.askPercentChange >0,'down': data.askPercentChange <0}">{{data.Ask | number:
+                    '1.2-2'}} </span>
+                  <div style="position:absolute; right: 0em;">
+                    <span *ngIf="data.askPercentChange == 0 "><i class="material-icons"
+                        style="color:rgb(203, 156, 68)">remove</i></span>
+                    <span *ngIf="data.askPercentChange < 0"><i class="material-icons"
+                        style="color:rgb(210, 89, 89);">arrow_drop_down</i></span>
+                    <span *ngIf="data.askPercentChange > 0"><i class="material-icons"
+                        style="color:rgb(40, 165, 40)">arrow_drop_up</i></span>
+                  </div>
+                </td>
               </tr>
             </tbody>
           </table>
 
         </div>
-        <div class="graph" id="tradingview_cea7f_1" data-twid="FOREXCOM:XAUUSD" style="width:99.6%;height:550px"
-          data-label="XAU/USD">
-          <iframe
-            src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_34628&symbol=XAUUSD&interval=1&symboledit=0&saveimage=0&toolbarbg=f1f3f6&studies=%5B%5D&theme=dark&style=2&timezone=Europe%2FIstanbul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=tr"
-            frameborder="0" style="width: 100%;height:30vw; "></iframe>
-        </div>
+
+        <div class="graph" id="tradingview_cea7f_1" style="width:99.6%;height:550px; color:white;" data-label="Fiyat Grafikleri">
+
+        <!-- <iframe
+          src=""
+          style="visibility: visible;">
+        </iframe> -->
+
+        <!-- <iframe
+        [src]="('http://localhost:8087/bim/api/v1/dashboardTree/' + 84) "
+  width="100%"
+  height="450"
+  frameborder="0"
+  style="border:0"
+  allowfullscreen
+></iframe> -->
+
+<iframe [src]="url | safe"></iframe>
+      </div>
       </div>
     </div>
   </div>
-
-  <div style="height: 40px; clear: both;">
-  </div>
-
+  <br>
   <app-footer></app-footer>
 </div>
+

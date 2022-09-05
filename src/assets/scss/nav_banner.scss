@@ -1946,7 +1946,7 @@ div.graph>div {
 
   table.mh td>div.dc {
     max-width: 70px;
-    overflow: hidden;
+    overflow: scroll;
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 90%;

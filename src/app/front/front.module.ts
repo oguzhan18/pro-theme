@@ -1,5 +1,4 @@
 import { FrontHomeComponent } from './components/front-products/front-home.component';
-import { FrontMainComponent } from './components/front-main/front-main.component';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,22 +14,35 @@ import { AllFreeMarketComponent } from './components/All-Price-Tables/all-free-m
 import { GoldsVarietiesComponent } from './components/All-Price-Tables/golds-varieties/golds-varieties.component';
 import { CurrencyComponent } from './components/All-Price-Tables/currency/currency.component';
 import { PariteComponent } from './components/All-Price-Tables/parite/parite.component';
+import { SafePipe } from './_sharred/_models/safe.pipe';
 
 const routes: Routes = [
-  { path: '', component: HomePriceComponent,
-  children: [
-    { path: 'products', component: FrontHomeComponent },
-    // { path: 'categories', component: FrontCategoriesComponent }
-  ]
-  }
-]
+  {
+    path: '',
+    component: HomePriceComponent,
+    children: [
+      { path: 'products', component: FrontHomeComponent },
+      // { path: 'categories', component: FrontCategoriesComponent }
+    ],
+  },
+];
 
 @NgModule({
-  declarations: [FrontMainComponent, FrontHomeComponent, HeaderComponent, NavbarComponent, FooterComponent, HomePriceComponent, BannerComponent, AboutComponent, ContactComponent, AllFreeMarketComponent, GoldsVarietiesComponent, CurrencyComponent, PariteComponent],
-  imports: [
-    CommonModule,
-
-    RouterModule.forChild(routes)
-  ]
+  declarations: [
+    SafePipe,
+    FrontHomeComponent,
+    HeaderComponent,
+    NavbarComponent,
+    FooterComponent,
+    HomePriceComponent,
+    BannerComponent,
+    AboutComponent,
+    ContactComponent,
+    AllFreeMarketComponent,
+    GoldsVarietiesComponent,
+    CurrencyComponent,
+    PariteComponent,
+  ],
+  imports: [CommonModule, RouterModule.forChild(routes)],
 })
-export class FrontModule { }
+export class FrontModule {}
