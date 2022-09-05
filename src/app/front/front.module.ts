@@ -15,6 +15,13 @@ import { GoldsVarietiesComponent } from './components/All-Price-Tables/golds-var
 import { CurrencyComponent } from './components/All-Price-Tables/currency/currency.component';
 import { PariteComponent } from './components/All-Price-Tables/parite/parite.component';
 import { SafePipe } from './_sharred/_models/safe.pipe';
+import { OurStoresComponent } from './pages/our-stores/our-stores.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   {
@@ -42,7 +49,15 @@ const routes: Routes = [
     GoldsVarietiesComponent,
     CurrencyComponent,
     PariteComponent,
+    OurStoresComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule,
+            RouterModule.forChild(routes),
+            MatIconModule,
+            MatToolbarModule,
+            MatSlideToggleModule,
+            MatSidenavModule,
+            MatDialogModule,
+            MatButtonModule],
 })
 export class FrontModule {}

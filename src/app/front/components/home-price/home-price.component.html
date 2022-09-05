@@ -10,40 +10,42 @@
             <span property="name">Serbest Piyasa Altın Fiyatları</span>
             <br><br>
           </div>
-
-
-
-
-          <table class="market ib foldable" id="fxdouble_main_t1" style="width: 40em;" >
+          <table class="market ib foldable" id="fxdouble_main_t1" style="width: 40em;">
             <thead>
               <tr>
-                <th>Sembol</th>
-                <th>Alış</th>
-                <th>Satış</th>
+                <th> <span style="position: relative; right:2em;">Sembol</span> </th>
+                <th> <span style="position: relative; right:8em;">Alış</span> </th>
+                <th> <span style="position: relative; right:10em;">Satış</span> </th>
               </tr>
             </thead>
-
             <tbody>
-              <tr *ngFor="let data of goldList;" (click)="toggle(data)" >
-                <td>
+              <tr *ngFor="let data of goldList;" (click)="toggle(data)">
+                <td style="text-align: left;  width: 2em;">
                   <span class="doviz"> {{data.Code}} </span>
                   <div class="dcdesc">{{data.Code}} </div>
                 </td>
-                <td class="float" property="currentExchangeRate" typeof="UnitPriceSpecification">
+                <td class="float" property="currentExchangeRate" typeof="UnitPriceSpecification"
+                  style="text-align: left; width: 0.5em;">
                   <span [ngClass]="{'up': data.askPercentChange >0,
-                    'down': data.askPercentChange <0}"> {{data.Ask | number: '1.'}} </span>
+                    'down': data.askPercentChange <0}" style="width:4em; text-align: center;"> {{data.Ask | number:
+                    '1.'}} </span>
                 </td>
-                <td class="float">
-                  <span data-f="S"
-                    [ngClass]="{'up': data.askPercentChange >0,'down': data.askPercentChange <0}">{{data.Ask | number:
+                <td class="float" style="text-align: left; width: 1em;">
+                  <span data-f="S" [ngClass]="{'up': data.askPercentChange >0,'down': data.askPercentChange <0}"
+                    style="width:4em; position: relative; right:3em; text-align: center;">{{data.Ask | number:
                     '1.2-2'}} </span>
-                  <div style="position:absolute; right: 0em;">
-                    <span *ngIf="data.askPercentChange == 0 "><i class="material-icons"
-                        style="color:rgb(203, 156, 68)">remove</i></span>
-                    <span *ngIf="data.askPercentChange < 0"><i class="material-icons"
-                        style="color:rgb(210, 89, 89);">arrow_drop_down</i></span>
-                    <span *ngIf="data.askPercentChange > 0"><i class="material-icons"
-                        style="color:rgb(40, 165, 40)">arrow_drop_up</i></span>
+                  <div style="position: absolute; left: 80%;">
+                    <div style="position:relative; bottom:1em;">
+                      <div> {{data.askPercentChange}} % </div>
+                    </div>
+                    <div style="position:relative; bottom:1.5em;">
+                      <span *ngIf="data.askPercentChange == 0 "><i class="material-icons"
+                          style="color:rgb(203, 156, 68)">remove</i></span>
+                      <span *ngIf="data.askPercentChange < 0"><i class="material-icons"
+                          style="color:rgb(210, 89, 89);">arrow_drop_down</i></span>
+                      <span *ngIf="data.askPercentChange > 0"><i class="material-icons"
+                          style="color:rgb(40, 165, 40)">arrow_drop_up</i></span>
+                    </div>
                   </div>
                 </td>
               </tr>
@@ -62,32 +64,40 @@
           <table class="market ib foldable" id="fxdouble_main_t2" style="width: 40em;">
             <thead>
               <tr>
-                <th>Sembol</th>
-                <th>Alış</th>
-                <th>Satış</th>
+                <th> <span style="position: relative; right:6em;">Sembol</span> </th>
+                <th> <span style="position: relative; right:8em;">Alış</span> </th>
+                <th> <span style="position: relative; right:12em;">Satış</span> </th>
               </tr>
             </thead>
-
             <tbody>
-              <tr *ngFor="let data of kriptoList;">
-                <td>
-                  <span class="doviz" >   {{data.Code}} </span>
+              <tr *ngFor="let data of kriptoList;" (click)="toggle(data)">
+                <td style="text-align: left;  width: 2em;">
+                  <span class="doviz"> {{data.Code}} </span>
                   <div class="dcdesc">{{data.Code}} </div>
                 </td>
-                <td class="float" property="currentExchangeRate" typeof="UnitPriceSpecification">
+                <td class="float" property="currentExchangeRate" typeof="UnitPriceSpecification"
+                  style="text-align: left; width: 0.5em;">
                   <span [ngClass]="{'up': data.askPercentChange >0,
-                    'down': data.askPercentChange <0}"> {{data.Ask | number: '1.'}} </span>
+                    'down': data.askPercentChange <0}"
+                    style="width:4em; position: relative; right: 2em; text-align: center;"> {{data.Ask | number: '1.'}}
+                  </span>
                 </td>
-                <td class="float">
-                  <span  [ngClass]="{'up': data.askPercentChange >0,'down': data.askPercentChange <0}">{{data.Ask | number:
+                <td class="float" style="text-align: left; width: 1em;">
+                  <span data-f="S" [ngClass]="{'up': data.askPercentChange >0,'down': data.askPercentChange <0}"
+                    style="width:4em; position: relative; right:6em; text-align: center;">{{data.Ask | number:
                     '1.2-2'}} </span>
-                  <div style="position:absolute; right: 0em;">
-                    <span *ngIf="data.askPercentChange == 0 "><i class="material-icons"
-                        style="color:rgb(203, 156, 68)">remove</i></span>
-                    <span *ngIf="data.askPercentChange < 0"><i class="material-icons"
-                        style="color:rgb(210, 89, 89);">arrow_drop_down</i></span>
-                    <span *ngIf="data.askPercentChange > 0"><i class="material-icons"
-                        style="color:rgb(40, 165, 40)">arrow_drop_up</i></span>
+                  <div style="position: absolute; left: 80%;">
+                    <div style="position:relative; bottom:2em;">
+                      <div> {{data.askPercentChange}} % </div>
+                    </div>
+                    <div style="position:relative; bottom:2.5em;">
+                      <span *ngIf="data.askPercentChange == 0 "><i class="material-icons"
+                          style="color:rgb(203, 156, 68)">remove</i></span>
+                      <span *ngIf="data.askPercentChange < 0"><i class="material-icons"
+                          style="color:rgb(210, 89, 89);">arrow_drop_down</i></span>
+                      <span *ngIf="data.askPercentChange > 0"><i class="material-icons"
+                          style="color:rgb(40, 165, 40)">arrow_drop_up</i></span>
+                    </div>
                   </div>
                 </td>
               </tr>
@@ -96,28 +106,15 @@
 
         </div>
 
-        <div class="graph" id="tradingview_cea7f_1" style="width:99.6%;height:550px; color:white;" data-label="Fiyat Grafikleri">
-
-        <!-- <iframe
-          src=""
-          style="visibility: visible;">
-        </iframe> -->
-
-        <!-- <iframe
-        [src]="('http://localhost:8087/bim/api/v1/dashboardTree/' + 84) "
-  width="100%"
-  height="450"
-  frameborder="0"
-  style="border:0"
-  allowfullscreen
-></iframe> -->
-
-<iframe [src]="url | safe"></iframe>
-      </div>
+        <div class="graph" id="tradingview_cea7f_1" style="width:99.6%;height:550px; color:white;"
+          data-label="Fiyat Grafikleri">
+          <iframe [src]="url | safe"></iframe>
+          <iframe *ngIf="url === '' "
+            src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_34628&symbol=USDTRY&interval=1&symboledit=0&saveimage=0&toolbarbg=f1f3f6&studies=%5B%5D&theme=dark&style=2&timezone=Europe%2FIstanbul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=tr"></iframe>
+        </div>
       </div>
     </div>
   </div>
   <br>
   <app-footer></app-footer>
 </div>
-

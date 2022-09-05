@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, Pipe, Renderer2,  } from '@angular/core';
+import { Component, OnDestroy, OnInit, Pipe, Renderer2 } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { CATEGORYTYPE } from '../../_sharred/_models/categoryType';
 import { SocketData } from '../../_sharred/_models/socketData';
@@ -11,9 +11,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   templateUrl: './home-price.component.html',
   styleUrls: ['./home-price.component.css'],
 })
-
-
-export class HomePriceComponent implements OnInit, OnDestroy {
+export class HomePriceComponent implements OnInit {
   isClicked: boolean = false;
   currencyList: SocketData[] = [];
   goldList: SocketData[] = [];
@@ -47,9 +45,7 @@ export class HomePriceComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-
     this.urlMap = this.sanitizer.bypassSecurityTrustResourceUrl(this.urlx);
-
     this.interval = setInterval(() => {
       if (this.pingStatus === false) {
         this.subscriptions.unsubscribe();
@@ -270,20 +266,21 @@ export class HomePriceComponent implements OnInit, OnDestroy {
     }
   }
 
-  ngOnDestroy(): void {
-    clearInterval(this.interval);
-  }
   toggle(socketData: SocketData) {
+    this.XXX = 'RUBTRY';
+    console.log(this.XXX);
     this.XXX = this.code = socketData.Code;
     console.log(this.XXX);
 
-this.url = this.urlx = 'https://s.tradingview.com/widgetembed/?frameElementId=tradingview_34628&symbol='+this.XXX+'&interval=1&symboledit=0&saveimage=0&toolbarbg=f1f3f6&studies=%5B%5D&theme=dark&style=2&timezone=Europe%2FIstanbul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=tr'
+    this.url = this.urlx =
+      'https://s.tradingview.com/widgetembed/?frameElementId=tradingview_34628&symbol=' +
+      this.XXX +
+      '&interval=1&symboledit=0&saveimage=0&toolbarbg=f1f3f6&studies=%5B%5D&theme=dark&style=2&timezone=Europe%2FIstanbul&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=tr';
 
-console.log(this.urlx);
+    console.log(this.urlx);
   }
 
   getSanitizedURL() {
     return this.sanitizer.bypassSecurityTrustUrl(this.urlx);
   }
-
 }
