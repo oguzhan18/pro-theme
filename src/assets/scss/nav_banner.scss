@@ -520,6 +520,8 @@ div#themepicker:hover>span.selector {
 }
 
 .fmenu>div {
+  position: relative;
+  right:7em;
   display: inline-block;
   white-space: nowrap
 }

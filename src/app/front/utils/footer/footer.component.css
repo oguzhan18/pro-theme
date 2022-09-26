@@ -12,3 +12,16 @@
   height: 100px;
   width:  100px;
 }
+li a{
+  font-size: 1.1em;
+}
+.apps-market{
+  float: right;
+  position: relative;
+  top: 1em;
+  /* left: 2em; */
+  right: 3em;
+}
+.apps-market a{
+  margin-left: 1em;
+}
