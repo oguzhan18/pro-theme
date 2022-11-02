@@ -98,7 +98,10 @@ div#connection > div {
 }
 
 a.logo {
-  overflow: hidden
+  overflow: hidden;
+  position: relative;
+  left: 1em;
+
 }
 
   a.logo h1, a.logo h2 {
